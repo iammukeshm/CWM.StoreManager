@@ -3,6 +3,12 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
-
+  <PropertyGroup>
+    <DocumentationFile>SwaggerDocumentation.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CWM.StoreManager.Infrastructure\CWM.StoreManager.Infrastructure.csproj" />
+  </ItemGroup>
 
 </Project>
