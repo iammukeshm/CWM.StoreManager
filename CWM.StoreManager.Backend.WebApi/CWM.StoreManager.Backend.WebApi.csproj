@@ -8,6 +8,9 @@
     <NoWarn>1701;1702;1591</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="9.0.0" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\CWM.StoreManager.Infrastructure\CWM.StoreManager.Infrastructure.csproj" />
   </ItemGroup>
 

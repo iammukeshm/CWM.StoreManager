@@ -12,7 +12,7 @@ namespace CWM.StoreManager.Infrastructure.Extensions
             app.UseSwagger();
             app.UseSwaggerUI(options =>
             {
-                options.SwaggerEndpoint("/swagger/V1/swagger.json", "ASP.NET Core Hero - Boilerplate");
+                options.SwaggerEndpoint("/swagger/V1/swagger.json", "CWM Store Manager API");
                 options.RoutePrefix = "swagger";
                 options.DisplayRequestDuration();
             });
