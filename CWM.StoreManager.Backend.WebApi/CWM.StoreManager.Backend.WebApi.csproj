@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -8,13 +8,11 @@
     <NoWarn>1701;1702;1591</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="IdentityServer4" Version="4.1.1" />
-    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.1" />
-    <PackageReference Include="MediatR" Version="9.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.ApiAuthorization.IdentityServer" Version="3.1.9" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\CWM.StoreManager.Application\CWM.StoreManager.Application.csproj" />
+    <ProjectReference Include="..\CWM.StoreManager.Common\CWM.StoreManager.Common.csproj" />
+    <ProjectReference Include="..\CWM.StoreManager.Domain\CWM.StoreManager.Domain.csproj" />
     <ProjectReference Include="..\CWM.StoreManager.Infrastructure\CWM.StoreManager.Infrastructure.csproj" />
+    <ProjectReference Include="..\CWM.StoreManager.Persistence\CWM.StoreManager.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

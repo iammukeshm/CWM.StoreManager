@@ -13,9 +13,9 @@ namespace CWM.StoreManager.Infrastructure.Extensions
             services.AddSwaggerGen(c =>
             {
                 c.IncludeXmlComments(string.Format(@"{0}\SwaggerDocumentation.xml", System.AppDomain.CurrentDomain.BaseDirectory));
-                c.SwaggerDoc("V1", new OpenApiInfo
+                c.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Version = "V1",
+                    Version = "v1",
                     Title = "CWM Store Manager API",
                     Description = "This Api will be responsible for overall data distribution and authorization.",
                     Contact = new OpenApiContact
