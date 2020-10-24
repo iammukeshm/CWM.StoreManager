@@ -1,7 +1,9 @@
 using CWM.Core.Essentials.Middlewares;
+using CWM.StoreManager.Application;
 using CWM.StoreManager.Application.Extensions;
 using CWM.StoreManager.Infrastructure.Extensions;
 using CWM.StoreManager.Persistence.Extensions;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Serilog;
+using System.Reflection;
 
 namespace CWM.StoreManager.Backend.WebApi
 {

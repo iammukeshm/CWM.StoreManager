@@ -1,9 +1,7 @@
-﻿using CWM.StoreManager.Application.Features.Catalog.Commands.CreateOrUpdateCatalogItem;
+﻿using CWM.StoreManager.Application.Features.Catalog.Commands.CreateCatalogItem;
 using CWM.StoreManager.Application.Features.Catalog.Queries.GetCatalogItemById;
 using CWM.StoreManager.Application.Features.Catalog.Queries.GetCatalogItems;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System.Net;
 using System.Threading.Tasks;
 
 namespace CWM.StoreManager.Backend.WebApi.Controllers.v1

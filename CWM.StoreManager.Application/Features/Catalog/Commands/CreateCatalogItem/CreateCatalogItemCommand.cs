@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CWM.StoreManager.Application.Features.Catalog.Commands.CreateOrUpdateCatalogItem
+namespace CWM.StoreManager.Application.Features.Catalog.Commands.CreateCatalogItem
 {
     public partial class CreateCatalogItemCommand : IViewModel, IRequest<Result<string>>
     { 
