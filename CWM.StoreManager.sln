@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CWM.StoreManager.Domain", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CWM.StoreManager.Application", "CWM.StoreManager.Application\CWM.StoreManager.Application.csproj", "{01BD6502-1836-4AC5-A735-3FF82992960E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CWM.StoreManager.Common", "CWM.StoreManager.Common\CWM.StoreManager.Common.csproj", "{7ED3D63B-3416-4114-BD0E-770828E98782}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CWM.StoreManager.Infrastructure", "CWM.StoreManager.Infrastructure\CWM.StoreManager.Infrastructure.csproj", "{261BF8F4-EB40-411C-BCC0-6CBE57D7F163}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CWM.StoreManager.Persistence", "CWM.StoreManager.Persistence\CWM.StoreManager.Persistence.csproj", "{F57B4037-42A4-4435-AA49-A1B6C3538EF3}"
@@ -33,10 +31,6 @@ Global
 		{01BD6502-1836-4AC5-A735-3FF82992960E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01BD6502-1836-4AC5-A735-3FF82992960E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01BD6502-1836-4AC5-A735-3FF82992960E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7ED3D63B-3416-4114-BD0E-770828E98782}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7ED3D63B-3416-4114-BD0E-770828E98782}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7ED3D63B-3416-4114-BD0E-770828E98782}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7ED3D63B-3416-4114-BD0E-770828E98782}.Release|Any CPU.Build.0 = Release|Any CPU
 		{261BF8F4-EB40-411C-BCC0-6CBE57D7F163}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{261BF8F4-EB40-411C-BCC0-6CBE57D7F163}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{261BF8F4-EB40-411C-BCC0-6CBE57D7F163}.Release|Any CPU.ActiveCfg = Release|Any CPU

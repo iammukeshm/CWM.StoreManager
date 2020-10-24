@@ -15,7 +15,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CWM.StoreManager.Application\CWM.StoreManager.Application.csproj" />
-    <ProjectReference Include="..\CWM.StoreManager.Common\CWM.StoreManager.Common.csproj" />
     <ProjectReference Include="..\CWM.StoreManager.Domain\CWM.StoreManager.Domain.csproj" />
     <ProjectReference Include="..\CWM.StoreManager.Infrastructure\CWM.StoreManager.Infrastructure.csproj" />
     <ProjectReference Include="..\CWM.StoreManager.Persistence\CWM.StoreManager.Persistence.csproj" />

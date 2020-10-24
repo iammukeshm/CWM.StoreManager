@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using CWM.StoreManager.Application.Features.Catalog.Queries.GetCatalogItems;
-using CWM.StoreManager.Common;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+﻿using CWM.StoreManager.Application.Features.Catalog.Queries.GetCatalogItems;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+using System.Threading.Tasks;
 
 namespace CWM.StoreManager.Backend.WebApi.Controllers.v1
 {
@@ -15,10 +8,9 @@ namespace CWM.StoreManager.Backend.WebApi.Controllers.v1
     public class CatalogController : BaseApiController<CatalogController>
     {
         [HttpGet]
-        public async Task<IActionResult> GetCatalogItemsAsync(int pageSize, int pageNumber)
+        public async Task<IActionResult> GetCatalogItemsAsync(int pageNumber,int pageSize)
         {
-            var result = await _mediator.Send(new GetCatalogItemsQuery());
-            return Ok(PaginatedResult<IEnumerable<GetCatalogItemsViewModel>>.Success(result, 10, pageNumber, pageSize));
+            return Ok(await _mediator.Send(new GetCatalogItemsQuery(pageNumber, pageSize)));
         }
     }
 }
