@@ -32,7 +32,7 @@ namespace CWM.StoreManager.Application.Features.Catalog.Commands.DeleteCatalogIt
             Throw.Exception.IfEntityNotFound(request.Id, itemToBeDeleted, "Catalog Item");
             _catalogContext.CatalogItems.Remove(itemToBeDeleted);
             await _catalogContext.SaveChangesAsync(cancellationToken);
-            return Result<string>.Success($"Catalog Item with Id {itemToBeDeleted.Id} Deleted.");
+            return Result<string>.EntityDeleted(itemToBeDeleted.Id, "Catalog Item");
         }
     }
 }
