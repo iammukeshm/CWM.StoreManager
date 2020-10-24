@@ -16,12 +16,29 @@ namespace CWM.StoreManager.Domain.Entities.Catalog
         public int CatalogBrandId { get; private set; }
         public CatalogBrand CatalogBrand { get; private set; }
 
-        public CatalogItem(int catalogTypeId,
+        public CatalogItem(int id,
+            int catalogTypeId,
             int catalogBrandId,
             string description,
             string name,
             decimal price,
             string pictureUri)
+        {
+            Id = id;
+            CatalogTypeId = catalogTypeId;
+            CatalogBrandId = catalogBrandId;
+            Description = description;
+            Name = name;
+            Price = price;
+            PictureUri = pictureUri;
+        }
+        public CatalogItem(
+          int catalogTypeId,
+          int catalogBrandId,
+          string description,
+          string name,
+          decimal price,
+          string pictureUri)
         {
             CatalogTypeId = catalogTypeId;
             CatalogBrandId = catalogBrandId;

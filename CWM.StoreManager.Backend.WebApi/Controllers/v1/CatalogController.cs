@@ -1,6 +1,9 @@
-﻿using CWM.StoreManager.Application.Features.Catalog.Queries.GetCatalogItemById;
+﻿using CWM.StoreManager.Application.Features.Catalog.Commands.CreateOrUpdateCatalogItem;
+using CWM.StoreManager.Application.Features.Catalog.Queries.GetCatalogItemById;
 using CWM.StoreManager.Application.Features.Catalog.Queries.GetCatalogItems;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace CWM.StoreManager.Backend.WebApi.Controllers.v1
@@ -17,6 +20,11 @@ namespace CWM.StoreManager.Backend.WebApi.Controllers.v1
         public async Task<IActionResult> GetCatalogItemDetailsAsync(int id)
         {
             return Ok(await _mediator.Send(new GetCatalogItemByIdQuery(id)));
+        }
+        [HttpPost]
+        public async Task<IActionResult> CreateOrUpdateCatalogItemAsync(CreateCatalogItemCommand command)
+        {
+            return Ok(await _mediator.Send(command));
         }
     }
 }
