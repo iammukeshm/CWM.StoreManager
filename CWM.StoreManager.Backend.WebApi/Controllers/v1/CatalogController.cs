@@ -1,4 +1,5 @@
 ﻿using CWM.StoreManager.Application.Features.Catalog.Commands.CreateCatalogItem;
+using CWM.StoreManager.Application.Features.Catalog.Commands.DeleteCatalogItem;
 using CWM.StoreManager.Application.Features.Catalog.Queries.GetCatalogItemById;
 using CWM.StoreManager.Application.Features.Catalog.Queries.GetCatalogItems;
 using Microsoft.AspNetCore.Mvc;
@@ -21,6 +22,11 @@ namespace CWM.StoreManager.Backend.WebApi.Controllers.v1
         }
         [HttpPost]
         public async Task<IActionResult> CreateOrUpdateCatalogItemAsync(CreateCatalogItemCommand command)
+        {
+            return Ok(await _mediator.Send(command));
+        }
+        [HttpDelete]
+        public async Task<IActionResult> DeleteCatalogItemAsync(DeleteCatalogItemCommand command)
         {
             return Ok(await _mediator.Send(command));
         }

@@ -21,13 +21,30 @@ namespace CWM.StoreManager.Application.Features.Catalog.Commands.CreateCatalogIt
                 .NotEmpty().WithMessage("{PropertyName} is required.")
                 .NotNull()
                 .MaximumLength(50).WithMessage("{PropertyName} must not exceed 50 characters.")
-                .MustAsync(IsUniqueBarcode).WithMessage("{PropertyName} already exists.");
+                .MustAsync(IsUniqueName).WithMessage("{PropertyName} already exists.");
+            RuleFor(p => p.Description)
+                 .NotEmpty().WithMessage("{PropertyName} is required.")
+                .NotNull();
+            RuleFor(p => p.CatalogBrandId)
+                .NotNull()
+                .MustAsync(BrandExists).WithMessage("{PropertyName} does not exist.");
+            RuleFor(p => p.CatalogTypeId)
+               .NotNull()
+               .MustAsync(TypeExists).WithMessage("{PropertyName} does not exist.");
 
         }
 
-        private async Task<bool> IsUniqueBarcode(string barcode, CancellationToken cancellationToken)
+        private async Task<bool> IsUniqueName(string name, CancellationToken cancellationToken)
         {
-            return await _catalogContext.CatalogItems.AllAsync(a => a.Name != barcode);
+            return await _catalogContext.CatalogItems.AllAsync(a => a.Name != name);
+        }
+        private async Task<bool> BrandExists(int brandId, CancellationToken cancellationToken)
+        {
+            return await _catalogContext.CatalogBrands.AnyAsync(a => a.Id == brandId);
+        }
+        private async Task<bool> TypeExists(int typeId, CancellationToken cancellationToken)
+        {
+            return await _catalogContext.CatalogTypes.AnyAsync(a => a.Id == typeId);
         }
     }
 }
