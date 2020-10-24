@@ -1,4 +1,5 @@
-﻿using CWM.StoreManager.Application.Features.Catalog.Queries.GetCatalogItems;
+﻿using CWM.StoreManager.Application.Features.Catalog.Queries.GetCatalogItemById;
+using CWM.StoreManager.Application.Features.Catalog.Queries.GetCatalogItems;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -11,6 +12,11 @@ namespace CWM.StoreManager.Backend.WebApi.Controllers.v1
         public async Task<IActionResult> GetCatalogItemsAsync(int pageNumber,int pageSize)
         {
             return Ok(await _mediator.Send(new GetCatalogItemsQuery(pageNumber, pageSize)));
+        }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetCatalogItemDetailsAsync(int id)
+        {
+            return Ok(await _mediator.Send(new GetCatalogItemByIdQuery(id)));
         }
     }
 }

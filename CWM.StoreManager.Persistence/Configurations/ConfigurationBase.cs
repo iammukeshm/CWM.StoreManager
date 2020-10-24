@@ -1,4 +1,5 @@
-﻿using CWM.StoreManager.Domain.Entities;
+﻿using CWM.Core.Essentials.Abstractions;
+using CWM.StoreManager.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;

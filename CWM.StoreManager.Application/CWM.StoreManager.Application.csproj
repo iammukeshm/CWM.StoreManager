@@ -14,6 +14,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\CWM.Core.Essentials\CWM.Core.Essentials\CWM.Core.Essentials.csproj" />
     <ProjectReference Include="..\CWM.StoreManager.Domain\CWM.StoreManager.Domain.csproj" />
   </ItemGroup>
 </Project>

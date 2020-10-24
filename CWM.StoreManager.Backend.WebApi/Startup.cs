@@ -1,10 +1,7 @@
-using CWM.StoreManager.Application;
+using CWM.Core.Essentials.Middlewares;
 using CWM.StoreManager.Application.Extensions;
-using CWM.StoreManager.Backend.WebApi.Middlewares;
-using CWM.StoreManager.Domain;
 using CWM.StoreManager.Infrastructure.Extensions;
 using CWM.StoreManager.Persistence.Extensions;
-using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -13,8 +10,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Serilog;
-using System.Linq;
-using System.Reflection;
 
 namespace CWM.StoreManager.Backend.WebApi
 {

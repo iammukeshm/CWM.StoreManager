@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using CWM.Core.Essentials.Abstractions;
 
 namespace CWM.StoreManager.Domain.Entities.Catalog
 {

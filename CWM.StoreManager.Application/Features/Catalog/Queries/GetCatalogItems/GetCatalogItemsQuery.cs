@@ -31,8 +31,9 @@ namespace CWM.StoreManager.Application.Features.Catalog.Queries.GetCatalogItems
         }
         public async Task<PaginatedResult<GetCatalogItemsViewModel>> Handle(GetCatalogItemsQuery request, CancellationToken cancellationToken)
         {
-            Expression<Func<CatalogItem, GetCatalogItemsViewModel>> selectExpression = e => new GetCatalogItemsViewModel
+            Expression<Func<CatalogItem, GetCatalogItemsViewModel>> expression = e => new GetCatalogItemsViewModel
             {
+                Id = e.Id,
                 Name = e.Name,
                 Description = e.Description,
                 Price = e.Price,
@@ -41,8 +42,8 @@ namespace CWM.StoreManager.Application.Features.Catalog.Queries.GetCatalogItems
                 Brand = e.CatalogBrand.Brand
             };
             var paginatedList = await _catalogContext.CatalogItems
-                .Select(selectExpression)
-                .ToPaginatedListAsync<GetCatalogItemsViewModel>(request.PageNumber, request.PageSize);
+                .Select(expression)
+                .ToPaginatedListAsync(request.PageNumber, request.PageSize);
             return paginatedList;
 
         }

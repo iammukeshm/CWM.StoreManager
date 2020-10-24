@@ -1,5 +1,6 @@
 ﻿
 
+using CWM.Core.Essentials.Abstractions;
 using CWM.Core.Essentials.ValidatR;
 
 namespace CWM.StoreManager.Domain.Entities.Catalog

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CWM.Core.Essentials.Abstractions;
+using System;
 using System.Collections.Generic;
 using System.Text;
 

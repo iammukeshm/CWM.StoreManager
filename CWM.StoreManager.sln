@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CWM.StoreManager.Infrastruc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CWM.StoreManager.Persistence", "CWM.StoreManager.Persistence\CWM.StoreManager.Persistence.csproj", "{F57B4037-42A4-4435-AA49-A1B6C3538EF3}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CWM.Core.Essentials", "..\CWM.Core.Essentials\CWM.Core.Essentials\CWM.Core.Essentials.csproj", "{79F0F719-A25F-44AA-A4CF-E7B59B5E9A17}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{F57B4037-42A4-4435-AA49-A1B6C3538EF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F57B4037-42A4-4435-AA49-A1B6C3538EF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F57B4037-42A4-4435-AA49-A1B6C3538EF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79F0F719-A25F-44AA-A4CF-E7B59B5E9A17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79F0F719-A25F-44AA-A4CF-E7B59B5E9A17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79F0F719-A25F-44AA-A4CF-E7B59B5E9A17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79F0F719-A25F-44AA-A4CF-E7B59B5E9A17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
