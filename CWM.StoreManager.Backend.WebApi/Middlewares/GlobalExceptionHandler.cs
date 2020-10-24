@@ -27,14 +27,13 @@ namespace CWM.StoreManager.Backend.WebApi.Middlewares
             {
                 var response = context.Response;
                 response.ContentType = "application/json";
-                var responseModel = Result.Failure(new[] { error?.Message });
+                var responseModel = Result.Failure(new[] { error?.Message});
                 switch (error)
                 {
                     case KeyNotFoundException e:
                         response.StatusCode = (int)HttpStatusCode.NotFound;
                         break;
                     default:
-                        // unhandled error
                         response.StatusCode = (int)HttpStatusCode.InternalServerError;
                         break;
                 }

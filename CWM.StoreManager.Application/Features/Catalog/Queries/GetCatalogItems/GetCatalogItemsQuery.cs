@@ -1,16 +1,17 @@
-﻿using AutoMapper;
+﻿using CWM.Core.Essentials.Extensions;
+using CWM.Core.Essentials.Results;
 using CWM.StoreManager.Application.Abstractions.Persistence;
-using CWM.StoreManager.Application.Common;
+using CWM.StoreManager.Domain.Entities.Catalog;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
+using System;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace CWM.StoreManager.Application.Features.Catalog.Queries.GetCatalogItems
 {
-    public class GetCatalogItemsQuery : IRequest<PaginatedResult<IEnumerable<GetCatalogItemsViewModel>>>
+    public class GetCatalogItemsQuery : IRequest<PaginatedResult<GetCatalogItemsViewModel>>
     {
         public int PageNumber { get; set; }
         public int PageSize { get; set; }
@@ -21,28 +22,28 @@ namespace CWM.StoreManager.Application.Features.Catalog.Queries.GetCatalogItems
         }
     }
     
-    public class GetCatalogItemsQueryHandler : IRequestHandler<GetCatalogItemsQuery, PaginatedResult<IEnumerable<GetCatalogItemsViewModel>>>
+    public class GetCatalogItemsQueryHandler : IRequestHandler<GetCatalogItemsQuery, PaginatedResult<GetCatalogItemsViewModel>>
     {
         private readonly ICatalogContext _catalogContext;
-        private readonly IMapper _mapper;
-        public GetCatalogItemsQueryHandler(IMapper mapper, ICatalogContext catalogContext)
+        public GetCatalogItemsQueryHandler(ICatalogContext catalogContext)
         {
-            _mapper = mapper;
             _catalogContext = catalogContext;
         }
-        public async Task<PaginatedResult<IEnumerable<GetCatalogItemsViewModel>>> Handle(GetCatalogItemsQuery request, CancellationToken cancellationToken)
+        public async Task<PaginatedResult<GetCatalogItemsViewModel>> Handle(GetCatalogItemsQuery request, CancellationToken cancellationToken)
         {
-            request.PageNumber = request.PageNumber == 0 ? 1 : request.PageNumber;
-            request.PageSize = request.PageSize == 0 ? 10 : request.PageSize;
-
-            var catalogItems = await _catalogContext.CatalogItems
-                .Skip((request.PageNumber - 1) * request.PageSize)
-                .Take(request.PageSize)
-                .ToListAsync();
-            var count = await _catalogContext.CatalogItems.CountAsync(); 
-            var catalogItemsViewModel =  _mapper.Map<IEnumerable<GetCatalogItemsViewModel>>(catalogItems);
-            return PaginatedResult<IEnumerable<GetCatalogItemsViewModel>>
-                .Success(catalogItemsViewModel, count, request.PageNumber, request.PageSize);
+            Expression<Func<CatalogItem, GetCatalogItemsViewModel>> selectExpression = e => new GetCatalogItemsViewModel
+            {
+                Name = e.Name,
+                Description = e.Description,
+                Price = e.Price,
+                PictureUri = e.PictureUri,
+                Type = e.CatalogType.Type,
+                Brand = e.CatalogBrand.Brand
+            };
+            var paginatedList = await _catalogContext.CatalogItems
+                .Select(selectExpression)
+                .ToPaginatedListAsync<GetCatalogItemsViewModel>(request.PageNumber, request.PageSize);
+            return paginatedList;
 
         }
     }
