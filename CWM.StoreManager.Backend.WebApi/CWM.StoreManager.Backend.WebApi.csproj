@@ -8,6 +8,12 @@
     <NoWarn>1701;1702;1591</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\CWM.StoreManager.Application\CWM.StoreManager.Application.csproj" />
     <ProjectReference Include="..\CWM.StoreManager.Common\CWM.StoreManager.Common.csproj" />
     <ProjectReference Include="..\CWM.StoreManager.Domain\CWM.StoreManager.Domain.csproj" />

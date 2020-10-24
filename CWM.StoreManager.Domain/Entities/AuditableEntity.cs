@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CWM.StoreManager.Application.Abstractions.Models
+namespace CWM.StoreManager.Domain.Entities
 {
-    public abstract class AuditableEntity
+    public abstract class AuditableEntity : BaseEntity
     {
         public string CreatedBy { get; set; }
 
