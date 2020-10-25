@@ -14,7 +14,7 @@ namespace CWM.StoreManager.Application.Abstractions.Persistence
     {
         IDbConnection Connection { get; }
         bool HasChanges { get; }
-
+        EntityEntry Entry(object entity);
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }

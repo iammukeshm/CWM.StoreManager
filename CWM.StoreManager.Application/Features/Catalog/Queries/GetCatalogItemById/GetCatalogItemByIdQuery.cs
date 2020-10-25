@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace CWM.StoreManager.Application.Features.Catalog.Queries.GetCatalogItemById
 {
-    public class GetCatalogItemByIdQuery : IRequest<Result<GetCatalogItemByIdViewModel>>
+    public class GetCatalogItemByIdQuery : IRequest<Result<CatalogItemViewModel>>
     {
         public int Id { get; set; }
         public GetCatalogItemByIdQuery(int id)
@@ -23,16 +23,16 @@ namespace CWM.StoreManager.Application.Features.Catalog.Queries.GetCatalogItemBy
         }
     }
 
-    public class GetCatalogItemsQueryHandler : IRequestHandler<GetCatalogItemByIdQuery, Result<GetCatalogItemByIdViewModel>>
+    public class GetCatalogItemsQueryHandler : IRequestHandler<GetCatalogItemByIdQuery, Result<CatalogItemViewModel>>
     {
         private readonly ICatalogContext _catalogContext;
         public GetCatalogItemsQueryHandler(ICatalogContext catalogContext)
         {
             _catalogContext = catalogContext;
         }
-        public async Task<Result<GetCatalogItemByIdViewModel>> Handle(GetCatalogItemByIdQuery request, CancellationToken cancellationToken)
+        public async Task<Result<CatalogItemViewModel>> Handle(GetCatalogItemByIdQuery request, CancellationToken cancellationToken)
         {
-            Expression<Func<CatalogItem, GetCatalogItemByIdViewModel>> expression = e => new GetCatalogItemByIdViewModel
+            Expression<Func<CatalogItem, CatalogItemViewModel>> expression = e => new CatalogItemViewModel
             {
                 Id = e.Id,
                 Name = e.Name,
@@ -46,7 +46,7 @@ namespace CWM.StoreManager.Application.Features.Catalog.Queries.GetCatalogItemBy
                 .Where(e => e.Id == request.Id)
                 .Select(expression).FirstOrDefaultAsync();
             Throw.Exception.IfEntityNotFound(request.Id,item, "Catalog Item");
-            return Result<GetCatalogItemByIdViewModel>.Success(item);
+            return Result<CatalogItemViewModel>.Success(item);
 
         }
     }

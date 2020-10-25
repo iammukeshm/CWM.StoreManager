@@ -28,7 +28,7 @@ namespace CWM.StoreManager.Application.Features.Catalog.Commands.DeleteCatalogIt
 
         public async Task<Result<string>> Handle(DeleteCatalogItemCommand request, CancellationToken cancellationToken)
         {
-            var itemToBeDeleted = await _catalogContext.CatalogItems.Where(a => a.Id == request.Id).FirstOrDefaultAsync();
+            var itemToBeDeleted = await _catalogContext.CatalogItems.FindAsync(request.Id);
             Throw.Exception.IfEntityNotFound(request.Id, itemToBeDeleted, "Catalog Item");
             _catalogContext.CatalogItems.Remove(itemToBeDeleted);
             await _catalogContext.SaveChangesAsync(cancellationToken);

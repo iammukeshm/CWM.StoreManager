@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CWM.StoreManager.Application.Features.Catalog.Queries.GetCatalogItems
 {
-    public class GetCatalogItemsViewModel : IViewModel
+    public class CatalogItemViewModel : IViewModel
     {
         public int Id { get; set; }
         public string Name { get;  set; }

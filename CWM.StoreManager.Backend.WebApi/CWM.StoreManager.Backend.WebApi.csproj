@@ -6,6 +6,7 @@
   <PropertyGroup>
     <DocumentationFile>SwaggerDocumentation.xml</DocumentationFile>
     <NoWarn>1701;1702;1591</NoWarn>
+    <UserSecretsId>94310d90-fe77-4054-9f2b-8bbcfc7b3fda</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="FluentValidation.AspNetCore" Version="9.2.0" />

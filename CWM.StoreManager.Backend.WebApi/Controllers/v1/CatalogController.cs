@@ -1,5 +1,7 @@
-﻿using CWM.StoreManager.Application.Features.Catalog.Commands.CreateCatalogItem;
+﻿using CWM.Core.Essentials.ValidatR;
+using CWM.StoreManager.Application.Features.Catalog.Commands.CreateCatalogItem;
 using CWM.StoreManager.Application.Features.Catalog.Commands.DeleteCatalogItem;
+using CWM.StoreManager.Application.Features.Catalog.Commands.UpdateCatalogItem;
 using CWM.StoreManager.Application.Features.Catalog.Queries.GetCatalogItemById;
 using CWM.StoreManager.Application.Features.Catalog.Queries.GetCatalogItems;
 using Microsoft.AspNetCore.Mvc;
@@ -21,8 +23,14 @@ namespace CWM.StoreManager.Backend.WebApi.Controllers.v1
             return Ok(await _mediator.Send(new GetCatalogItemByIdQuery(id)));
         }
         [HttpPost]
-        public async Task<IActionResult> CreateOrUpdateCatalogItemAsync(CreateCatalogItemCommand command)
+        public async Task<IActionResult> CreateCatalogItemAsync(CreateCatalogItemCommand command)
         {
+            return Ok(await _mediator.Send(command));
+        }
+        [HttpPut]
+        public async Task<IActionResult> UpdateCatalogItemAsync(int id, UpdateCatalogItemCommand command)
+        {
+            Throw.Exception.IfNotEqual<int>(id, command.Id, "CatalogItemId");
             return Ok(await _mediator.Send(command));
         }
         [HttpDelete]

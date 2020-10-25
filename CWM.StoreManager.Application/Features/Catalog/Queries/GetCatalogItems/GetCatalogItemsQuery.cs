@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace CWM.StoreManager.Application.Features.Catalog.Queries.GetCatalogItems
 {
-    public class GetCatalogItemsQuery : IRequest<PaginatedResult<GetCatalogItemsViewModel>>
+    public class GetCatalogItemsQuery : IRequest<PaginatedList<CatalogItemViewModel>>
     {
         public int PageNumber { get; set; }
         public int PageSize { get; set; }
@@ -22,16 +22,16 @@ namespace CWM.StoreManager.Application.Features.Catalog.Queries.GetCatalogItems
         }
     }
     
-    public class GetCatalogItemsQueryHandler : IRequestHandler<GetCatalogItemsQuery, PaginatedResult<GetCatalogItemsViewModel>>
+    public class GetCatalogItemsQueryHandler : IRequestHandler<GetCatalogItemsQuery, PaginatedList<CatalogItemViewModel>>
     {
         private readonly ICatalogContext _catalogContext;
         public GetCatalogItemsQueryHandler(ICatalogContext catalogContext)
         {
             _catalogContext = catalogContext;
         }
-        public async Task<PaginatedResult<GetCatalogItemsViewModel>> Handle(GetCatalogItemsQuery request, CancellationToken cancellationToken)
+        public async Task<PaginatedList<CatalogItemViewModel>> Handle(GetCatalogItemsQuery request, CancellationToken cancellationToken)
         {
-            Expression<Func<CatalogItem, GetCatalogItemsViewModel>> expression = e => new GetCatalogItemsViewModel
+            Expression<Func<CatalogItem, CatalogItemViewModel>> expression = e => new CatalogItemViewModel
             {
                 Id = e.Id,
                 Name = e.Name,
