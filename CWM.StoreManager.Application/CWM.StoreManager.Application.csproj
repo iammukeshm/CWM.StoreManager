@@ -18,4 +18,7 @@
     <ProjectReference Include="..\..\CWM.Core.Essentials\CWM.Core.Essentials\CWM.Core.Essentials.csproj" />
     <ProjectReference Include="..\CWM.StoreManager.Domain\CWM.StoreManager.Domain.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Features\Type\Commands\" />
+  </ItemGroup>
 </Project>

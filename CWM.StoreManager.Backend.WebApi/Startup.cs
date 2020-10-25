@@ -37,6 +37,7 @@ namespace CWM.StoreManager.Backend.WebApi
                 config.AssumeDefaultVersionWhenUnspecified = true;
                 config.ReportApiVersions = true;
             });
+            services.AddDistributedMemoryCache();
             services.AddControllers();
         }
 
