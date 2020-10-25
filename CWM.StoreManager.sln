@@ -13,8 +13,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CWM.StoreManager.Infrastruc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CWM.StoreManager.Persistence", "CWM.StoreManager.Persistence\CWM.StoreManager.Persistence.csproj", "{F57B4037-42A4-4435-AA49-A1B6C3538EF3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CWM.Core.Essentials", "..\CWM.Core.Essentials\CWM.Core.Essentials\CWM.Core.Essentials.csproj", "{79F0F719-A25F-44AA-A4CF-E7B59B5E9A17}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CED85133-CF6F-4FFB-8592-5FCFDE44DD03}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{C0C354CE-2581-459E-8AD6-4159E227B263}"
@@ -25,7 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{8C97181A-5DEB-4CCD-86B7-A4CA08A179C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CWM.StoreManager.Client.Razor", "CWM.StoreManager.Client.Razor\CWM.StoreManager.Client.Razor.csproj", "{F3E3DB99-25E5-4E3B-8E02-7855985BC149}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CWM.StoreManager.Client.Razor", "CWM.StoreManager.Client.Razor\CWM.StoreManager.Client.Razor.csproj", "{F3E3DB99-25E5-4E3B-8E02-7855985BC149}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,10 +51,6 @@ Global
 		{F57B4037-42A4-4435-AA49-A1B6C3538EF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F57B4037-42A4-4435-AA49-A1B6C3538EF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F57B4037-42A4-4435-AA49-A1B6C3538EF3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{79F0F719-A25F-44AA-A4CF-E7B59B5E9A17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{79F0F719-A25F-44AA-A4CF-E7B59B5E9A17}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{79F0F719-A25F-44AA-A4CF-E7B59B5E9A17}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{79F0F719-A25F-44AA-A4CF-E7B59B5E9A17}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F3E3DB99-25E5-4E3B-8E02-7855985BC149}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F3E3DB99-25E5-4E3B-8E02-7855985BC149}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3E3DB99-25E5-4E3B-8E02-7855985BC149}.Release|Any CPU.ActiveCfg = Release|Any CPU

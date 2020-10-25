@@ -1,11 +1,8 @@
-﻿using CWM.Core.Essentials.Results;
+﻿using CWM.DotNetCore.Results;
 using CWM.StoreManager.Application.Abstractions.Models;
 using CWM.StoreManager.Application.Abstractions.Persistence;
 using CWM.StoreManager.Domain.Entities.Catalog;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 

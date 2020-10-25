@@ -1,11 +1,8 @@
 ﻿using CWM.StoreManager.Domain.Entities.Catalog;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace CWM.StoreManager.Persistence.Configurations.Catalog
+namespace CWM.StoreManager.Persistence.Configurations.Catalogs
 {
     public class CatalogItemConfiguration : ConfigurationBase<CatalogItem>
     {

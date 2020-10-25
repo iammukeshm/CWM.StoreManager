@@ -1,4 +1,4 @@
-﻿using CWM.Core.Essentials.Abstractions;
+﻿using CWM.DotNetCore.Domain;
 
 namespace CWM.StoreManager.Domain.Entities.Catalog
 {

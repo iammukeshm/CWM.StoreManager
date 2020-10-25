@@ -13,9 +13,10 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.9" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.9" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="CWM.DotNetCore.Extensions" Version="1.0.0" />
+    <PackageReference Include="CWM.DotNetCore.Caching" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\CWM.Core.Essentials\CWM.Core.Essentials\CWM.Core.Essentials.csproj" />
     <ProjectReference Include="..\CWM.StoreManager.Domain\CWM.StoreManager.Domain.csproj" />
   </ItemGroup>
   <ItemGroup>

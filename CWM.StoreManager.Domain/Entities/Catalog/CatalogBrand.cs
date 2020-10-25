@@ -1,7 +1,4 @@
-﻿using CWM.Core.Essentials.Abstractions;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using CWM.DotNetCore.Domain;
 
 namespace CWM.StoreManager.Domain.Entities.Catalog
 {

@@ -1,9 +1,6 @@
-using CWM.Core.Essentials.Middlewares;
-using CWM.StoreManager.Application;
 using CWM.StoreManager.Application.Extensions;
 using CWM.StoreManager.Infrastructure.Extensions;
 using CWM.StoreManager.Persistence.Extensions;
-using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -11,8 +8,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Serilog;
-using System.Reflection;
 
 namespace CWM.StoreManager.Backend.WebApi
 {
@@ -44,7 +39,6 @@ namespace CWM.StoreManager.Backend.WebApi
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
-            loggerFactory.AddSerilog();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -53,7 +47,7 @@ namespace CWM.StoreManager.Backend.WebApi
             app.UseHttpsRedirection();
             app.UseSwaggerService();
             app.UseRouting();
-            app.UseMiddleware<GlobalExceptionHandler>();
+            //app.UseMiddleware<GlobalExceptionHandler>();
             //app.UseAuthentication();
             //app.UseAuthorization();
             app.UseEndpoints(endpoints =>

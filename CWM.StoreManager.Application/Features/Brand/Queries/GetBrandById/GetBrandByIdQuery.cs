@@ -1,10 +1,7 @@
-﻿using CWM.Core.Essentials.Results;
-using CWM.Core.Essentials.ValidatR;
+﻿using CWM.DotNetCore.Results;
+using CWM.DotNetCore.ValidatR;
 using CWM.StoreManager.Application.Abstractions.Persistence;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 

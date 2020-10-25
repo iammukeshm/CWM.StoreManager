@@ -9,6 +9,7 @@
     <UserSecretsId>94310d90-fe77-4054-9f2b-8bbcfc7b3fda</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="CWM.DotNetCore.Logging" Version="1.0.0" />
     <PackageReference Include="FluentValidation.AspNetCore" Version="9.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.9">
       <PrivateAssets>all</PrivateAssets>

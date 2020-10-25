@@ -1,10 +1,6 @@
-﻿using CWM.Core.Essentials.Abstractions;
-using CWM.StoreManager.Domain.Entities;
+﻿using CWM.DotNetCore.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CWM.StoreManager.Persistence.Configurations
 {

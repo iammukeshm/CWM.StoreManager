@@ -1,10 +1,9 @@
-﻿using CWM.Core.Essentials.Caching;
-using CWM.Core.Essentials.Results;
+﻿using CWM.DotNetCore.Results;
+using CWM.DotNetCore.Caching;
 using CWM.StoreManager.Application.Abstractions.Persistence;
 using CWM.StoreManager.Application.Constants.CacheKeys;
 using MediatR;
 using Microsoft.Extensions.Caching.Distributed;
-using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;

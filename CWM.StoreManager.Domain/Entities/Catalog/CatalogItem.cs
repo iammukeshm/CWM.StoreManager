@@ -1,7 +1,5 @@
-﻿
-
-using CWM.Core.Essentials.Abstractions;
-using CWM.Core.Essentials.ValidatR;
+﻿using CWM.DotNetCore.Domain;
+using CWM.DotNetCore.ValidatR;
 
 namespace CWM.StoreManager.Domain.Entities.Catalog
 {

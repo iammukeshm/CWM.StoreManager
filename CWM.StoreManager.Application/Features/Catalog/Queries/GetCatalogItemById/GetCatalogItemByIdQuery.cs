@@ -1,16 +1,14 @@
-﻿using CWM.Core.Essentials.Caching;
-using CWM.Core.Essentials.Results;
-using CWM.Core.Essentials.ValidatR;
+﻿using CWM.DotNetCore.Results;
+using CWM.DotNetCore.Caching;
+using CWM.DotNetCore.ValidatR;
 using CWM.StoreManager.Application.Abstractions.Persistence;
 using CWM.StoreManager.Domain.Entities.Catalog;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Distributed;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 

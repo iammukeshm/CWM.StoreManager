@@ -1,7 +1,4 @@
-﻿using CWM.Core.Essentials.Results;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using CWM.DotNetCore.Results;
 using System.Threading.Tasks;
 
 namespace CWM.StoreManager.Application.Abstractions.Identity

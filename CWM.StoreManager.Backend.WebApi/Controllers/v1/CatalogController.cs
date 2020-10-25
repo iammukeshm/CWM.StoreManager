@@ -1,4 +1,4 @@
-﻿using CWM.Core.Essentials.ValidatR;
+﻿using CWM.DotNetCore.ValidatR;
 using CWM.StoreManager.Application.Features.Catalog.Commands.CreateCatalogItem;
 using CWM.StoreManager.Application.Features.Catalog.Commands.DeleteCatalogItem;
 using CWM.StoreManager.Application.Features.Catalog.Commands.UpdateCatalogItem;

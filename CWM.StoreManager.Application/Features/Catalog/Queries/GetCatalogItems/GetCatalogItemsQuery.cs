@@ -1,5 +1,5 @@
-﻿using CWM.Core.Essentials.Extensions;
-using CWM.Core.Essentials.Results;
+﻿using CWM.DotNetCore.Extensions;
+using CWM.DotNetCore.Results;
 using CWM.StoreManager.Application.Abstractions.Persistence;
 using CWM.StoreManager.Domain.Entities.Catalog;
 using MediatR;
@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace CWM.StoreManager.Application.Features.Catalog.Queries.GetCatalogItems
 {
-    public class GetCatalogItemsQuery : IRequest<PaginatedList<CatalogItemViewModel>>
+    public class GetCatalogItemsQuery : IRequest<PaginatedResult<CatalogItemViewModel>>
     {
         public int PageNumber { get; set; }
         public int PageSize { get; set; }
@@ -22,14 +22,14 @@ namespace CWM.StoreManager.Application.Features.Catalog.Queries.GetCatalogItems
         }
     }
     
-    public class GetCatalogItemsQueryHandler : IRequestHandler<GetCatalogItemsQuery, PaginatedList<CatalogItemViewModel>>
+    public class GetCatalogItemsQueryHandler : IRequestHandler<GetCatalogItemsQuery, PaginatedResult<CatalogItemViewModel>>
     {
         private readonly ICatalogContext _catalogContext;
         public GetCatalogItemsQueryHandler(ICatalogContext catalogContext)
         {
             _catalogContext = catalogContext;
         }
-        public async Task<PaginatedList<CatalogItemViewModel>> Handle(GetCatalogItemsQuery request, CancellationToken cancellationToken)
+        public async Task<PaginatedResult<CatalogItemViewModel>> Handle(GetCatalogItemsQuery request, CancellationToken cancellationToken)
         {
             Expression<Func<CatalogItem, CatalogItemViewModel>> expression = e => new CatalogItemViewModel
             {
