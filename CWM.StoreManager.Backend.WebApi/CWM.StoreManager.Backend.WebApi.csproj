@@ -22,5 +22,8 @@
     <ProjectReference Include="..\CWM.StoreManager.Infrastructure\CWM.StoreManager.Infrastructure.csproj" />
     <ProjectReference Include="..\CWM.StoreManager.Persistence\CWM.StoreManager.Persistence.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Middlewares\" />
+  </ItemGroup>
 
 </Project>

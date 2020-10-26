@@ -25,7 +25,9 @@ namespace CWM.StoreManager.Backend.WebApi
         {
             services.RegisterSwagger();
             services.AddApplicationLayer();
+            services.AddIdentityInfrastructure(_configuration);
             services.AddPersistenceLayer(_configuration);
+            
             services.AddApiVersioning(config =>
             {
                 config.DefaultApiVersion = new ApiVersion(1, 0);
@@ -48,8 +50,8 @@ namespace CWM.StoreManager.Backend.WebApi
             app.UseSwaggerService();
             app.UseRouting();
             //app.UseMiddleware<GlobalExceptionHandler>();
-            //app.UseAuthentication();
-            //app.UseAuthorization();
+            app.UseAuthentication();
+            app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

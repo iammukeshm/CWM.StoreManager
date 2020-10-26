@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CWM.StoreManager.Infrastructure.Identity
+namespace CWM.StoreManager.Infrastructure.Account.Models
 {
     public class ApplicationUser : IdentityUser
     {

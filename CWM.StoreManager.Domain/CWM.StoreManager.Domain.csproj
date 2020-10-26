@@ -5,7 +5,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="CWM.DotNetCore.Domain" Version="1.0.0" />
-    <PackageReference Include="CWM.DotNetCore.ValidatR" Version="1.0.0" />
+    <PackageReference Include="CWM.DotNetCore.ValidatR" Version="1.0.2" />
   </ItemGroup>
 
 </Project>

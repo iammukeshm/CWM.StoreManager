@@ -4,6 +4,7 @@ using CWM.StoreManager.Application.Features.Catalog.Commands.DeleteCatalogItem;
 using CWM.StoreManager.Application.Features.Catalog.Commands.UpdateCatalogItem;
 using CWM.StoreManager.Application.Features.Catalog.Queries.GetCatalogItemById;
 using CWM.StoreManager.Application.Features.Catalog.Queries.GetCatalogItems;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -13,6 +14,7 @@ namespace CWM.StoreManager.Backend.WebApi.Controllers.v1
     public class CatalogController : BaseApiController<CatalogController>
     {
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> GetCatalogItemsAsync(int pageNumber,int pageSize)
         {
             return Ok(await _mediator.Send(new GetCatalogItemsQuery(pageNumber, pageSize)));

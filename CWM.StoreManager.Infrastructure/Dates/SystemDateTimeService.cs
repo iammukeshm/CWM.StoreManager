@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using CWM.StoreManager.Application.Abstractions.Date;
+using System;
 
 namespace CWM.StoreManager.Infrastructure.Dates
 {
-    class SystemDateTimeService
+    public class SystemDateTimeService : IDateTimeService
     {
+        public DateTime NowUtc => DateTime.UtcNow;
     }
 }
