@@ -30,6 +30,7 @@ namespace CWM.StoreManager.Domain.Entities.Catalog
             Price = price;
             PictureUri = pictureUri;
         }
+
         public CatalogItem(
           int catalogTypeId,
           int catalogBrandId,
@@ -45,6 +46,7 @@ namespace CWM.StoreManager.Domain.Entities.Catalog
             Price = price;
             PictureUri = pictureUri;
         }
+
         public void UpdateDetails(string name, string description, decimal price)
         {
             Throw.Exception.IfNull(name, nameof(name));

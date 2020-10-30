@@ -15,26 +15,30 @@ namespace CWM.StoreManager.Backend.WebApi.Controllers.v1
     {
         [HttpGet]
         [Authorize]
-        public async Task<IActionResult> GetCatalogItemsAsync(int pageNumber,int pageSize)
+        public async Task<IActionResult> GetCatalogItemsAsync(int pageNumber, int pageSize)
         {
             return Ok(await _mediator.Send(new GetCatalogItemsQuery(pageNumber, pageSize)));
         }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCatalogItemDetailsAsync(int id)
         {
             return Ok(await _mediator.Send(new GetCatalogItemByIdQuery(id)));
         }
+
         [HttpPost]
         public async Task<IActionResult> CreateCatalogItemAsync(CreateCatalogItemCommand command)
         {
             return Ok(await _mediator.Send(command));
         }
+
         [HttpPut]
         public async Task<IActionResult> UpdateCatalogItemAsync(int id, UpdateCatalogItemCommand command)
         {
             Throw.Exception.IfNotEqual<int>(id, command.Id, "CatalogItemId");
             return Ok(await _mediator.Send(command));
         }
+
         [HttpDelete]
         public async Task<IActionResult> DeleteCatalogItemAsync(DeleteCatalogItemCommand command)
         {

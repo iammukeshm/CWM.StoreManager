@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CWM.StoreManager.Application.Features.Type.Queries.GetTypes
+﻿namespace CWM.StoreManager.Application.Features.Type.Queries.GetTypes
 {
     public class TypeViewModel
     {

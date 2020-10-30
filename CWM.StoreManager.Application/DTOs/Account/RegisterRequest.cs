@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace CWM.StoreManager.Application.DTOs.Account
 {
@@ -16,6 +13,7 @@ namespace CWM.StoreManager.Application.DTOs.Account
         [Required]
         [EmailAddress]
         public string Email { get; set; }
+
         [Required]
         [MinLength(6)]
         public string UserName { get; set; }

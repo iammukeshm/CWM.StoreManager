@@ -2,7 +2,6 @@
 using CWM.DotNetCore.ValidatR;
 using CWM.StoreManager.Application.Abstractions.Account;
 using CWM.StoreManager.Application.Abstractions.Date;
-using CWM.StoreManager.Application.Abstractions.Email;
 using CWM.StoreManager.Application.DTOs.Account;
 using CWM.StoreManager.Application.DTOs.Email;
 using CWM.StoreManager.Application.Settings;
@@ -28,9 +27,12 @@ namespace CWM.StoreManager.Infrastructure.Account.Services
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+
         //private readonly IEmailService _emailService;
         private readonly JWTSettings _jwtSettings;
+
         private readonly IDateTimeService _dateTimeService;
+
         public AccountService(UserManager<ApplicationUser> userManager,
             RoleManager<IdentityRole> roleManager,
             IOptions<JWTSettings> jwtSettings,
@@ -92,16 +94,12 @@ namespace CWM.StoreManager.Infrastructure.Account.Services
         {
             var userClaims = await _userManager.GetClaimsAsync(user);
             var roles = await _userManager.GetRolesAsync(user);
-
             var roleClaims = new List<Claim>();
-
             for (int i = 0; i < roles.Count; i++)
             {
                 roleClaims.Add(new Claim("roles", roles[i]));
             }
-
             string ipAddress = IPHelper.GetIpAddress();
-
             var claims = new[]
             {
                 new Claim(JwtRegisteredClaimNames.Sub, user.UserName),
@@ -112,6 +110,11 @@ namespace CWM.StoreManager.Infrastructure.Account.Services
             }
             .Union(userClaims)
             .Union(roleClaims);
+            return JWTGeneration(claims);
+        }
+
+        private JwtSecurityToken JWTGeneration(IEnumerable<Claim> claims)
+        {
             var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.Key));
             var signingCredentials = new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha256);
 

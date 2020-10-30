@@ -15,6 +15,7 @@ namespace CWM.StoreManager.Persistence.Contexts
         public CatalogContext(DbContextOptions<CatalogContext> options) : base(options)
         {
         }
+
         public DbSet<CatalogItem> CatalogItems { get; set; }
         public DbSet<CatalogBrand> CatalogBrands { get; set; }
         public DbSet<CatalogType> CatalogTypes { get; set; }
@@ -42,6 +43,7 @@ namespace CWM.StoreManager.Persistence.Contexts
             }
             return base.SaveChangesAsync(cancellationToken);
         }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder) => modelBuilder.ApplyConfigurationsFromAssembly(typeof(CatalogContext).Assembly);
     }
 }

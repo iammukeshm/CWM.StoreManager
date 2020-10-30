@@ -10,11 +10,13 @@ namespace CWM.StoreManager.Application.Features.Catalog.Commands.DeleteCatalogIt
 {
     public partial class DeleteCatalogItemCommand : IViewModel, IRequest<Result>
     {
-        public int Id{ get; set; }
+        public int Id { get; set; }
     }
+
     public class DeleteCatalogItemCommandHandler : IRequestHandler<DeleteCatalogItemCommand, Result>
     {
         private readonly ICatalogContext _catalogContext;
+
         public DeleteCatalogItemCommandHandler(ICatalogContext catalogContext)
         {
             _catalogContext = catalogContext;

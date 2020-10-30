@@ -5,7 +5,6 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-
 namespace CWM.StoreManager.Application.Behaviors
 {
     public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>
@@ -27,7 +26,7 @@ namespace CWM.StoreManager.Application.Behaviors
                 var failures = validationResults.SelectMany(r => r.Errors).Where(f => f != null).ToList();
 
                 //if (failures.Count != 0)
-                    //throw new CWM.Core.Essentials.Exceptions.ValidationException(failures);
+                //throw new CWM.Core.Essentials.Exceptions.ValidationException(failures);
             }
             return await next();
         }

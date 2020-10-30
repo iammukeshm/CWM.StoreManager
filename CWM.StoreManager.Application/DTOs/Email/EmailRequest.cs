@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CWM.StoreManager.Application.DTOs.Email
+﻿namespace CWM.StoreManager.Application.DTOs.Email
 {
     public class EmailRequest
     {

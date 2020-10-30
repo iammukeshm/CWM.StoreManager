@@ -14,11 +14,11 @@ namespace CWM.StoreManager.Backend.WebApi
     public class Startup
     {
         public IConfiguration _configuration { get; }
+
         public Startup(IConfiguration configuration)
         {
             _configuration = configuration;
         }
-
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -27,7 +27,7 @@ namespace CWM.StoreManager.Backend.WebApi
             services.AddApplicationLayer();
             services.AddIdentityInfrastructure(_configuration);
             services.AddPersistenceLayer(_configuration);
-            
+
             services.AddApiVersioning(config =>
             {
                 config.DefaultApiVersion = new ApiVersion(1, 0);
@@ -45,7 +45,7 @@ namespace CWM.StoreManager.Backend.WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
-            
+
             app.UseHttpsRedirection();
             app.UseSwaggerService();
             app.UseRouting();
@@ -56,7 +56,6 @@ namespace CWM.StoreManager.Backend.WebApi
             {
                 endpoints.MapControllers();
             });
-            
         }
     }
 }

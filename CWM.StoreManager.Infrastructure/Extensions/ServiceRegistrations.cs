@@ -30,10 +30,14 @@ namespace CWM.StoreManager.Infrastructure.Extensions
                    configuration.GetConnectionString("IdentityConnection"),
                    b => b.MigrationsAssembly(typeof(AccountContext).Assembly.FullName)));
             services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AccountContext>().AddDefaultTokenProviders();
+
             #region Services
+
             services.AddTransient<IAccountService, AccountService>();
             services.AddTransient<IDateTimeService, SystemDateTimeService>();
-            #endregion
+
+            #endregion Services
+
             services.Configure<JWTSettings>(configuration.GetSection("JWTSettings"));
             services.AddAuthentication(options =>
             {
@@ -82,6 +86,7 @@ namespace CWM.StoreManager.Infrastructure.Extensions
                     };
                 });
         }
+
         public static void RegisterSwagger(this IServiceCollection services)
         {
             services.AddSwaggerGen(c =>

@@ -1,5 +1,5 @@
-﻿using CWM.DotNetCore.Results;
-using CWM.DotNetCore.Caching;
+﻿using CWM.DotNetCore.Caching;
+using CWM.DotNetCore.Results;
 using CWM.DotNetCore.ValidatR;
 using CWM.StoreManager.Application.Abstractions.Persistence;
 using CWM.StoreManager.Domain.Entities.Catalog;
@@ -17,6 +17,7 @@ namespace CWM.StoreManager.Application.Features.Catalog.Queries.GetCatalogItemBy
     public class GetCatalogItemByIdQuery : IRequest<Result<CatalogItemViewModel>>
     {
         public int Id { get; set; }
+
         public GetCatalogItemByIdQuery(int id)
         {
             Id = id;
@@ -27,17 +28,18 @@ namespace CWM.StoreManager.Application.Features.Catalog.Queries.GetCatalogItemBy
     {
         private readonly IDistributedCache _distributedCache;
         private readonly ICatalogContext _catalogContext;
+
         public GetCatalogItemsQueryHandler(ICatalogContext catalogContext, IDistributedCache distributedCache)
         {
             _distributedCache = distributedCache;
             _catalogContext = catalogContext;
         }
+
         public async Task<Result<CatalogItemViewModel>> Handle(GetCatalogItemByIdQuery request, CancellationToken cancellationToken)
         {
-            
             var cacheKey = $"Item-{request.Id}";
             var data = await _distributedCache.GetAsync<CatalogItemViewModel>(cacheKey);
-            if(data==null)
+            if (data == null)
             {
                 Expression<Func<CatalogItem, CatalogItemViewModel>> expression = e => new CatalogItemViewModel
                 {
@@ -56,7 +58,6 @@ namespace CWM.StoreManager.Application.Features.Catalog.Queries.GetCatalogItemBy
                 await _distributedCache.SetAsync<CatalogItemViewModel>("Item", data);
             }
             return Result<CatalogItemViewModel>.Success(data);
-
         }
     }
 }

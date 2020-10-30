@@ -10,6 +10,7 @@ namespace CWM.StoreManager.Infrastructure.Account.Contexts
         public AccountContext(DbContextOptions<AccountContext> options) : base(options)
         {
         }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -41,7 +42,6 @@ namespace CWM.StoreManager.Infrastructure.Account.Contexts
             builder.Entity<IdentityRoleClaim<string>>(entity =>
             {
                 entity.ToTable("RoleClaims");
-
             });
 
             builder.Entity<IdentityUserToken<string>>(entity =>

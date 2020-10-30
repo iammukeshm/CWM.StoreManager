@@ -1,9 +1,6 @@
 ﻿using CWM.StoreManager.Application.Abstractions.Persistence;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -31,17 +28,18 @@ namespace CWM.StoreManager.Application.Features.Catalog.Commands.CreateCatalogIt
             RuleFor(p => p.CatalogTypeId)
                .NotNull()
                .MustAsync(TypeExists).WithMessage("{PropertyName} does not exist.");
-
         }
 
         private async Task<bool> IsUniqueName(string name, CancellationToken cancellationToken)
         {
             return await _catalogContext.CatalogItems.AllAsync(a => a.Name != name);
         }
+
         private async Task<bool> BrandExists(int brandId, CancellationToken cancellationToken)
         {
             return await _catalogContext.CatalogBrands.AnyAsync(a => a.Id == brandId);
         }
+
         private async Task<bool> TypeExists(int typeId, CancellationToken cancellationToken)
         {
             return await _catalogContext.CatalogTypes.AnyAsync(a => a.Id == typeId);

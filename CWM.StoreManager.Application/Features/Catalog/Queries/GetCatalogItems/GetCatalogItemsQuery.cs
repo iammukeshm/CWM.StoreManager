@@ -15,20 +15,23 @@ namespace CWM.StoreManager.Application.Features.Catalog.Queries.GetCatalogItems
     {
         public int PageNumber { get; set; }
         public int PageSize { get; set; }
+
         public GetCatalogItemsQuery(int pageNumber, int pageSize)
         {
             PageNumber = pageNumber;
             PageSize = pageSize;
         }
     }
-    
+
     public class GetCatalogItemsQueryHandler : IRequestHandler<GetCatalogItemsQuery, PaginatedResult<CatalogItemViewModel>>
     {
         private readonly ICatalogContext _catalogContext;
+
         public GetCatalogItemsQueryHandler(ICatalogContext catalogContext)
         {
             _catalogContext = catalogContext;
         }
+
         public async Task<PaginatedResult<CatalogItemViewModel>> Handle(GetCatalogItemsQuery request, CancellationToken cancellationToken)
         {
             Expression<Func<CatalogItem, CatalogItemViewModel>> expression = e => new CatalogItemViewModel
@@ -45,7 +48,6 @@ namespace CWM.StoreManager.Application.Features.Catalog.Queries.GetCatalogItems
                 .Select(expression)
                 .ToPaginatedListAsync(request.PageNumber, request.PageSize);
             return paginatedList;
-
         }
     }
 }

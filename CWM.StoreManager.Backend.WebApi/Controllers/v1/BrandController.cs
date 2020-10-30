@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using CWM.StoreManager.Application.Features.Brand.Queries.GetBrandById;
+﻿using CWM.StoreManager.Application.Features.Brand.Queries.GetBrandById;
 using CWM.StoreManager.Application.Features.Brand.Queries.GetBrands;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace CWM.StoreManager.Backend.WebApi.Controllers.v1
 {
@@ -18,6 +14,7 @@ namespace CWM.StoreManager.Backend.WebApi.Controllers.v1
         {
             return Ok(await _mediator.Send(new GetBrandsQuery()));
         }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetBrandDetailsAsync(int id)
         {

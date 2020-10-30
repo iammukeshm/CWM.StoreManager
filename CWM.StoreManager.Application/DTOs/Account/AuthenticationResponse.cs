@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace CWM.StoreManager.Application.DTOs.Account
@@ -13,6 +11,7 @@ namespace CWM.StoreManager.Application.DTOs.Account
         public List<string> Roles { get; set; }
         public bool IsVerified { get; set; }
         public string JWToken { get; set; }
+
         [JsonIgnore]
         public string RefreshToken { get; set; }
     }

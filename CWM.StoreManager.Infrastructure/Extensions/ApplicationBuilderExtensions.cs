@@ -1,11 +1,8 @@
 ﻿using Microsoft.AspNetCore.Builder;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CWM.StoreManager.Infrastructure.Extensions
 {
-   public static class ApplicationBuilderExtensions
+    public static class ApplicationBuilderExtensions
     {
         public static void UseSwaggerService(this IApplicationBuilder app)
         {

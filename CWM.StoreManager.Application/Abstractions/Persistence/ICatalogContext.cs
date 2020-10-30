@@ -1,8 +1,5 @@
 ﻿using CWM.StoreManager.Domain.Entities.Catalog;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CWM.StoreManager.Application.Abstractions.Persistence
 {

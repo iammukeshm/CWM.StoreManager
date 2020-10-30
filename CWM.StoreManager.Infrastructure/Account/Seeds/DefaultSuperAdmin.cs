@@ -1,10 +1,7 @@
 ﻿using CWM.StoreManager.Application.Enums;
 using CWM.StoreManager.Infrastructure.Account.Models;
 using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace CWM.StoreManager.Infrastructure.Account.Seeds
@@ -34,7 +31,6 @@ namespace CWM.StoreManager.Infrastructure.Account.Seeds
                     await userManager.AddToRoleAsync(defaultUser, Roles.Admin.ToString());
                     await userManager.AddToRoleAsync(defaultUser, Roles.SuperAdmin.ToString());
                 }
-
             }
         }
     }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CWM.StoreManager.Persistence
+﻿namespace CWM.StoreManager.Persistence
 {
     public static class PersistenceLayerConstants
     {
